@@ -1,0 +1,45 @@
+pipeline:
+  name: Build node-unit-test
+  identifier: Build_node_unit_test_1763646063615
+  projectIdentifier: harness
+  orgIdentifier: default
+  stages:
+    - stage:
+        name: Build
+        identifier: Build
+        type: CI
+        spec:
+          cloneCodebase: true
+          execution:
+            steps:
+              - step:
+                  type: Run
+                  name: nodeinstall
+                  identifier: Echo_Welcome_Message
+                  spec:
+                    connectorRef: account.harnessImage
+                    image: node:20-alpine
+                    shell: Sh
+                    command: npm install
+              - step:
+                  type: Test
+                  name: Test_1
+                  identifier: Test_1
+                  spec:
+                    connectorRef: account.harnessImage
+                    image: node:20-alpine
+                    shell: Sh
+                    command: npm test
+                    intelligenceMode: true
+          platform:
+            os: Linux
+            arch: Amd64
+          runtime:
+            type: Cloud
+            spec: {}
+  properties:
+    ci:
+      codebase:
+        connectorRef: account.githubaccount
+        repoName: node-unit-test
+        build: <+input>
