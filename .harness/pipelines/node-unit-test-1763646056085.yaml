@@ -29,7 +29,9 @@ pipeline:
                     connectorRef: account.harnessImage
                     image: node:20-alpine
                     shell: Sh
-                    command: npm test
+                    command: |-
+                      mkdir -p reports
+                      npm test
                     reports:
                       type: JUnit
                       spec:
