@@ -20,11 +20,11 @@ pipeline:
                     connectorRef: account.harnessImage
                     image: node:20-alpine
                     shell: Sh
-                    command: npm install
+                    command: npm install c8 --save-dev
               - step:
                   type: Test
-                  name: Test_1
-                  identifier: Test_1
+                  name: Test
+                  identifier: Test
                   spec:
                     connectorRef: account.harnessImage
                     image: node:20-alpine
@@ -45,6 +45,23 @@ pipeline:
                   spec:
                     shell: Sh
                     command: cat reports/test-results.xml
+              - step:
+                  type: Run
+                  name: Coverage
+                  identifier: Coverage
+                  spec:
+                    connectorRef: account.harnessImage
+                    image: node:20-alpine
+                    shell: Sh
+                    command: |-
+                      mkdir coverage
+                      npm run coverage
+          codeCoverage: null
+          enabled: true
+          reportrSpecs:
+            - reportType: Cobertura
+              paths:
+                - coverage/cobertura-coverage.xml
           platform:
             os: Linux
             arch: Amd64
