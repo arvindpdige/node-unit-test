@@ -14,11 +14,23 @@ pipeline:
             steps:
               - step:
                   type: Run
-                  name: Echo Welcome Message
+                  name: nodeinstall
                   identifier: Echo_Welcome_Message
                   spec:
+                    connectorRef: account.harnessImage
+                    image: node:20-alpine
                     shell: Sh
-                    command: echo "Welcome to Harness CI"
+                    command: npm install
+              - step:
+                  type: Test
+                  name: Test_1
+                  identifier: Test_1
+                  spec:
+                    connectorRef: account.harnessImage
+                    image: node:20-alpine
+                    shell: Sh
+                    command: npm test
+                    intelligenceMode: true
           platform:
             os: Linux
             arch: Amd64
