@@ -30,6 +30,11 @@ pipeline:
                     image: node:20-alpine
                     shell: Sh
                     command: npm test
+                    reports:
+                      type: JUnit
+                      spec:
+                        paths:
+                          - reports/**/*.xml
                     intelligenceMode: true
           platform:
             os: Linux
