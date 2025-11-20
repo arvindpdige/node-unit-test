@@ -4,7 +4,8 @@
   "description": "",
   "type": "module",
   "scripts": {
-    "test": "node --test --test-reporter=junit --test-reporter-destination=./reports/test-results.xml"
+    "test": "node --test --test-reporter=junit --test-reporter-destination=./reports/test-results.xml",
+    "coverage": "c8 --reporter=cobertura --reporter=text node --test"
   },
   "repository": {
     "type": "git",
