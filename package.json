@@ -4,17 +4,17 @@
   "description": "",
   "type": "module",
   "scripts": {
-    "test": "node --test"
+    "test": "node --test --test-reporter=junit --test-reporter-destination=./reports/test-results.xml"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/node-sugar/01-unit-tests.git"
+    "url": "git+https://github.com/arvindpdige/node-unit-test.git"
   },
   "keywords": [],
   "author": "lgooday",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/node-sugar/01-unit-tests/issues"
+    "url": "https://github.com/arvindpdige/node-unit-test/issues"
   },
-  "homepage": "https://github.com/node-sugar/01-unit-tests#readme"
+  "homepage": "https://github.com/arvindpdige/node-unit-test#readme"
 }
