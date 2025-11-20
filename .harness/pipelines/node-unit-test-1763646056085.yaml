@@ -38,6 +38,13 @@ pipeline:
                         paths:
                           - reports/**/*.xml
                     intelligenceMode: true
+              - step:
+                  type: Run
+                  name: TestResults
+                  identifier: TestResults
+                  spec:
+                    shell: Sh
+                    command: cat reports/test-results.xml
           platform:
             os: Linux
             arch: Amd64
