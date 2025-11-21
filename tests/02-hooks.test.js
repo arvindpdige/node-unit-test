@@ -1,5 +1,3 @@
-// 02-hooks.test.js (Jest version)
-
 const hooksPassed = [];
 
 describe("02 - Hooks", () => {
@@ -35,6 +33,6 @@ test("check hooks passed", () => {
     "I'm running after each tests",
     "I'm running before each tests",
     "I'm running after each tests",
-    "I'm running once after all tests in this suite",
+    "I'm running once after all tests in this suite"
   ]);
 });

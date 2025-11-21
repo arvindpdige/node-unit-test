@@ -1,4 +1,4 @@
-import { add } from "../src/math.js";
+const { add } = require("../src/math.js");
 
 describe("math", () => {
   test("adds two numbers", () => {

@@ -1,7 +1,6 @@
 {
   "name": "01-unit-tests",
   "version": "1.0.0",
-  "type": "module",
 
   "scripts": {
     "test": "jest --ci --testResultsProcessor=jest-junit --coverage --coverageReporters=cobertura",
@@ -9,26 +8,15 @@
   },
 
   "jest": {
+    "testEnvironment": "node",
     "verbose": true,
     "collectCoverage": true,
     "coverageReporters": ["html", "json", "text", "cobertura"],
-    "testResultsProcessor": "jest-junit",
-    "testEnvironment": "node",
-
-    "transform": {},
-    "extensionsToTreatAsEsm": [".js"],
-    "testEnvironmentOptions": {
-      "experimentalVMModules": true
-    }
+    "testResultsProcessor": "jest-junit"
   },
 
   "jest-junit": {
     "outputDirectory": "./reports",
     "outputName": "junit.xml"
-  },
-
-  "devDependencies": {
-    "jest": "^29.7.0",
-    "jest-junit": "^16.0.0"
   }
 }

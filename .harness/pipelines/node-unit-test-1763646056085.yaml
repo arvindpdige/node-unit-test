@@ -20,7 +20,9 @@ pipeline:
                     connectorRef: account.harnessImage
                     image: node:20-alpine
                     shell: Sh
-                    command: npm install --save-dev jest jest-junit
+                    command: |
+                      apk add --no-cache python3
+                      npm install --save-dev jest jest-junit
               - step:
                   type: Test
                   name: Test
