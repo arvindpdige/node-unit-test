@@ -40,6 +40,7 @@ pipeline:
                       spec:
                         paths:
                           - reports/**/*.xml
+                          - coverage/cobertura-coverage.xml
                     intelligenceMode: true
               - step:
                   type: Run
@@ -48,9 +49,14 @@ pipeline:
                   spec:
                     shell: Sh
                     command: |-
+                      echo "===== reports directory======="
                       ls -lrth reports/ 
+                      echo "===== JUNIT XML ======="
                       cat reports/junit.xml
+                      echo "===== Coverage directory======="
                       ls -R coverage
+                      echo "===== Code Coverage ======="
+                      cat coverage/cobertura-coverage.xml
           enabled: true
           reportrSpecs:
             - reportType: Cobertura
