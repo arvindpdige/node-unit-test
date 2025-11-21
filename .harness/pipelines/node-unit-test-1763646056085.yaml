@@ -44,7 +44,9 @@ pipeline:
                   identifier: TestResults
                   spec:
                     shell: Sh
-                    command: cat reports/test-results.xml
+                    command: |-
+                      ls -lrth reports/ 
+                      cat reports/test-results.xml
               - step:
                   type: Run
                   name: Coverage
@@ -56,7 +58,6 @@ pipeline:
                     command: |-
                       mkdir coverage
                       npm run coverage
-          codeCoverage: null
           enabled: true
           reportrSpecs:
             - reportType: Cobertura
