@@ -1,33 +1,34 @@
 {
   "name": "01-unit-tests",
   "version": "1.0.0",
-  "description": "",
   "type": "module",
+
   "scripts": {
-      "test": "jest --ci --testResultsProcessor=jest-junit --coverage --coverageReporters=cobertura", 
-      "test-watchAll": "jest --watchAll" 
-    }, 
-    "jest": { 
-      "transform": {},
-      "verbose": true, 
-      "collectCoverage": true, 
-      "coverageReporters": [ "html", "json", "text", "cobertura" ], 
-      "testResultsProcessor": "jest-junit" ,
-      "testEnvironment": "node"
-    },
-    "jest-junit": {
-      "outputDirectory": "./reports",
-      "outputName": "junit.xml"
-    },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/arvindpdige/node-unit-test.git"
+    "test": "jest --ci --testResultsProcessor=jest-junit --coverage --coverageReporters=cobertura",
+    "test-watchAll": "jest --watchAll"
   },
-  "keywords": [],
-  "author": "lgooday",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/arvindpdige/node-unit-test/issues"
+
+  "jest": {
+    "verbose": true,
+    "collectCoverage": true,
+    "coverageReporters": ["html", "json", "text", "cobertura"],
+    "testResultsProcessor": "jest-junit",
+    "testEnvironment": "node",
+
+    "transform": {},
+    "extensionsToTreatAsEsm": [".js"],
+    "testEnvironmentOptions": {
+      "experimentalVMModules": true
+    }
   },
-  "homepage": "https://github.com/arvindpdige/node-unit-test#readme"
+
+  "jest-junit": {
+    "outputDirectory": "./reports",
+    "outputName": "junit.xml"
+  },
+
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "jest-junit": "^16.0.0"
+  }
 }
