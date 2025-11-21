@@ -9,7 +9,7 @@
   },
   "c8": {
     "all": true,
-    "include": ["src/**/*.js"],      // <-- IMPORTANT (adjust folder name)
+    "include": ["src/**/*.js"],  
     "reporter": ["text", "cobertura"]
   },
   "repository": {
