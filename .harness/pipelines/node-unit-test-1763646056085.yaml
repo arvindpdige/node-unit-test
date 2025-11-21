@@ -46,7 +46,7 @@ pipeline:
                     shell: Sh
                     command: |-
                       ls -lrth reports/ 
-                      cat reports/test-results.xml
+                      cat reports/junit.xml
               - step:
                   type: Run
                   name: Coverage
