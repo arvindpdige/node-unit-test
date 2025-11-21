@@ -49,17 +49,6 @@ pipeline:
                       ls -lrth reports/ 
                       cat reports/junit.xml
                       ls -R coverage
-              - step:
-                  type: Run
-                  name: Coverage
-                  identifier: Coverage
-                  spec:
-                    connectorRef: account.harnessImage
-                    image: node:20-alpine
-                    shell: Sh
-                    command: |-
-                      mkdir coverage
-                      npm run coverage
           enabled: true
           reportrSpecs:
             - reportType: Cobertura
