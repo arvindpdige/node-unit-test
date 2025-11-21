@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "test": "node --test --test-reporter=junit --test-reporter-destination=./reports/junit.xml",
-    "coverage": "c8 node --test"
+    "coverage": "c8 --check-coverage node --test"
   },
   "c8": {
     "all": true,
