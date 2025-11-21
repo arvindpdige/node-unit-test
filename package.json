@@ -10,7 +10,6 @@
     "jest": { 
       "transform": {},
       "verbose": true, 
-      "extensionsToTreatAsEsm": [".js"],
       "collectCoverage": true, 
       "coverageReporters": [ "html", "json", "text", "cobertura" ], 
       "testResultsProcessor": "jest-junit" ,
