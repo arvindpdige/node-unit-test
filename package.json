@@ -19,7 +19,7 @@
     "jest-junit": {
       "outputDirectory": "./reports",
       "outputName": "junit.xml"
-    }
+    },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/arvindpdige/node-unit-test.git"
