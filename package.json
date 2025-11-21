@@ -5,7 +5,12 @@
   "type": "module",
   "scripts": {
     "test": "node --test --test-reporter=junit --test-reporter-destination=./reports/test-results.xml",
-    "coverage": "c8 --reporter=cobertura --reporter=text node --test"
+    "coverage": "c8 node --test"
+  },
+  "c8": {
+    "all": true,
+    "include": ["src/**/*.js"],      // <-- IMPORTANT (adjust folder name)
+    "reporter": ["text", "cobertura"]
   },
   "repository": {
     "type": "git",
