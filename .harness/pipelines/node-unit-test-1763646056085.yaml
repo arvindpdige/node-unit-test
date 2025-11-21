@@ -40,6 +40,7 @@ pipeline:
                       spec:
                         paths:
                           - reports/**/*.xml
+                          - coverage/cobertura-coverage.xml
                     intelligenceMode: true
               - step:
                   type: Run
