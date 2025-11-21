@@ -1,42 +1,35 @@
-import test, {
-  describe,
-  before,
-  beforeEach,
-  after,
-  afterEach,
-} from "node:test";
-import assert from "node:assert";
+// 02-hooks.test.js (Jest version)
 
 const hooksPassed = [];
 
 describe("02 - Hooks", () => {
-  before(() => {
-    hooksPassed.push(`I'm running once before all tests in this suite`);
+  beforeAll(() => {
+    hooksPassed.push("I'm running once before all tests in this suite");
   });
 
   beforeEach(() => {
-    hooksPassed.push(`I'm running before each tests`);
+    hooksPassed.push("I'm running before each tests");
   });
 
-  after(() => {
-    hooksPassed.push(`I'm running once after all tests in this suite`);
+  afterAll(() => {
+    hooksPassed.push("I'm running once after all tests in this suite");
   });
 
   afterEach(() => {
-    hooksPassed.push(`I'm running after each tests`);
+    hooksPassed.push("I'm running after each tests");
   });
 
   test("a test", () => {
-    assert.strictEqual(1, 1);
+    expect(1).toBe(1);
   });
 
   test("another test", () => {
-    assert.strictEqual(1, 1);
+    expect(1).toBe(1);
   });
 });
 
 test("check hooks passed", () => {
-  assert.deepEqual(hooksPassed, [
+  expect(hooksPassed).toEqual([
     "I'm running once before all tests in this suite",
     "I'm running before each tests",
     "I'm running after each tests",
