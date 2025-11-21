@@ -9,7 +9,7 @@
   },
   "c8": {
     "all": true,
-    "include": ["src/**/*.js"],  
+    "include": ["tests/**/*.js"],  
     "reporter": ["text", "cobertura"],
     "check-coverage": true,
     "branches": 80,
