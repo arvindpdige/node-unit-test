@@ -20,7 +20,7 @@ pipeline:
                     connectorRef: account.harnessImage
                     image: node:20-alpine
                     shell: Sh
-                    command: npm install c8 --save-dev
+                    command: npm install --save-dev jest jest-junit
               - step:
                   type: Test
                   name: Test
@@ -31,6 +31,7 @@ pipeline:
                     shell: Sh
                     command: |-
                       mkdir -p reports
+                      mkdir -p coverage
                       npm test
                     reports:
                       type: JUnit
@@ -47,6 +48,7 @@ pipeline:
                     command: |-
                       ls -lrth reports/ 
                       cat reports/junit.xml
+                      ls -R coverage
               - step:
                   type: Run
                   name: Coverage
